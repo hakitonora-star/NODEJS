@@ -250,7 +250,70 @@ const LoginForm:AuthForm={
     }
 }
 console.log(LoginForm)
+type text=string;
+let nameText: string = "Nakul";
+// for defining custom type fro arrays ,type keyword is more easy
+type stringArray=string[];
+let names: stringArray = ["Nakul", "Rahul", "Aman"];
+// using an interface we will define an object which will be always having keys
+// of type number and value to be of the type of the array
+interface numberArray{
+    [index:number]:number
+}
+/*
+[10,20,30]
+{
+    0 : 10,
+    1 : 20,
+    2: 30,
+}
+*/
 
+type pair=[number,number];
+type triplet=[number,number,number];
+
+interface pairINterface{
+    first:number,
+    second:number
+}
+
+type logger=(msg:string,errorCode:number)=>void;
+
+interface loggerinterface{
+    (msg:string,errorCode:number):void;
+
+}
+
+type unionofstrandom=number|string;
+type x=complex
+
+interface ComplexNumber{
+    real:number,
+    imaginary:number
+
+}
+interface ComplexNumber{
+    add:(num:ComplexNumber)=>ComplexNumber
+}
+
+/** same as above same interface club
+ * interface ComplexNumber{
+    real:number,
+    imaginary:number
+    add:(num:ComplexNumber)=>ComplexNumber
+}
+ 
+ */
+
+
+
+
+
+
+
+
+
+  
 
 
 
