@@ -221,6 +221,35 @@ TypeScript checks new properties
                          address ❌
                           */
 
+type Details={name:string,marks:number,address?:string};
+
+const result1:Details={
+    name:"Sanket",
+    marks:98
+}
+const result2:Details={
+    name:"Aniket",
+    marks:98
+}
+interface AuthForm{
+    name:string,
+    submitButtonText:string,
+    onReset:(e:any)=>void,
+    onSubmit:(e:any)=>void
+}
+const LoginForm:AuthForm={
+    name:"Login form",
+    submitButtonText:"Login",
+    onReset:(e)=>{
+        //some imp
+
+    },
+    onSubmit:(e)=>{
+        //some imp
+
+    }
+}
+console.log(LoginForm)
 
 
 
