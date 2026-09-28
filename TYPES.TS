@@ -304,6 +304,56 @@ interface ComplexNumber{
 }
  
  */
+let schoolName:"DPS"|"DAV"="DPS";
+let another:string="KVS";
+
+// schoolname=another; // not possible because school name type is dav or dps but another name type is string 
+another =schoolName // it is allowed bacuse KVS and DAV is also a string so it is subset of string
+ console.log(schoolName);
+
+ type Complex={
+    real:number,
+    img:number,
+    // def:number,
+    add:(c:Complex)=>Complex
+ }
+
+ interface Complex2{
+    real:number,
+    img:number,
+    // def:0|1|2,
+    add:(C:Complex2,i?:number)=>Complex2
+ }
+
+ let c1:Complex={
+    real:10,
+    img:10,
+    // def:100,
+    add:(C:Complex)=>{return C}//c1 promises to accept any Complex, but c2.add only accepts Complex2, so c2 cannot replace c1.
+
+ }
+ let c2:Complex2={
+    real:9,
+    img:9,
+    // def:0,
+    add:(C:Complex2,i:number)=>{return C}//c1 promises to accept any Complex, but c2.add only accepts Complex2, so c2 cannot replace c1. for this we remove def
+
+ }
+ console.log(c1);
+ c1=c2; // one is interface and one is type but TS will considerand i complex same because the members are 
+  console.log(c1);
+  /*it asks:
+
+"Does c2 have everything that Complex requires?"
+Most important point
+
+It doesn't matter that one is a type and the other is an interface.
+
+TypeScript primarily uses structural typing:
+
+If two types have compatible structures, TypeScript considers them compatible.
+*/
+
 
 
 
